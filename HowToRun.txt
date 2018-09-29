@@ -1,7 +1,14 @@
 
 
 # Checkout the the yaml and script files from github
-# Run following command from command prompt to create an HA environment
+# Run following command from command prompt to create an HA environment,
+# run post deployment check , deploy openshift-tasks using cicd pipeline
 
-
+cd 1.SetupHAEnv
 ansible-playbook postdeploy.yaml
+
+cd 2.PostSetupCheck
+ansible-playbook postdeploy.yaml
+
+cd 3.CICD
+ansible-playbook create-pipeline-proj.yaml
